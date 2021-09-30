@@ -5,6 +5,7 @@ describe("isArray", () => {
     isArray(v);
   });
   test.concurrent.each([
+    { v: { length: 1 } },
     { v: "" },
     { v: 0 },
     { v: false },

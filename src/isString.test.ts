@@ -12,6 +12,7 @@ describe("isString", () => {
     { v: NaN },
     { v: [] },
     { v: {} },
+    { v: Symbol("a") },
   ])("is not string", ({ v }) => {
     expect(() => isString(v)).toThrowError();
   });
