@@ -21,5 +21,6 @@ export function isFiniteNumber(
   message?: string,
   Err = TypeError
 ): asserts value is number {
-  assert(typeof value === "number" && Number.isFinite(value), message, Err);
+  assert(typeof value === "number", message, Err);
+  assert(Number.isFinite(value), message, Err);
 }
