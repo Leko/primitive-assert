@@ -1,4 +1,5 @@
 export { equal } from "./equal.js";
+export { notEqual } from "./notEqual.js";
 export { assert } from "./assert.js";
 export { isArray } from "./isArray.js";
 export { isBoolean } from "./isBoolean.js";

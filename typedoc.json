@@ -9,5 +9,6 @@
   "validation": {
     "invalidLink": true
   },
-  "plugin": ["typedoc-plugin-markdown"]
+  "plugin": ["typedoc-plugin-markdown"],
+  "intentionallyNotExported": ["Not"]
 }

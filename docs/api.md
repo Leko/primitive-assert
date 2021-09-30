@@ -15,6 +15,7 @@ API
 - [isInstanceOf](api.md#isinstanceof)
 - [isNonNullish](api.md#isnonnullish)
 - [isString](api.md#isstring)
+- [notEqual](api.md#notequal)
 
 ## Functions
 
@@ -48,7 +49,7 @@ asserts value
 
 #### Defined in
 
-[assert.ts:16](https://github.com/Leko/primitive-assert/blob/42398a3/src/assert.ts#L16)
+[assert.ts:16](https://github.com/Leko/primitive-assert/blob/b52b46b/src/assert.ts#L16)
 
 ___
 
@@ -90,7 +91,7 @@ asserts actual is T
 
 #### Defined in
 
-[equal.ts:17](https://github.com/Leko/primitive-assert/blob/42398a3/src/equal.ts#L17)
+[equal.ts:17](https://github.com/Leko/primitive-assert/blob/b52b46b/src/equal.ts#L17)
 
 ___
 
@@ -130,7 +131,7 @@ asserts value is T[]
 
 #### Defined in
 
-[isArray.ts:16](https://github.com/Leko/primitive-assert/blob/42398a3/src/isArray.ts#L16)
+[isArray.ts:16](https://github.com/Leko/primitive-assert/blob/b52b46b/src/isArray.ts#L16)
 
 ___
 
@@ -165,7 +166,7 @@ asserts value is number
 
 #### Defined in
 
-[isBigInt.ts:17](https://github.com/Leko/primitive-assert/blob/42398a3/src/isBigInt.ts#L17)
+[isBigInt.ts:17](https://github.com/Leko/primitive-assert/blob/b52b46b/src/isBigInt.ts#L17)
 
 ___
 
@@ -200,7 +201,7 @@ asserts value is string
 
 #### Defined in
 
-[isBoolean.ts:17](https://github.com/Leko/primitive-assert/blob/42398a3/src/isBoolean.ts#L17)
+[isBoolean.ts:17](https://github.com/Leko/primitive-assert/blob/b52b46b/src/isBoolean.ts#L17)
 
 ___
 
@@ -237,7 +238,7 @@ asserts value is number
 
 #### Defined in
 
-[isFiniteNumber.ts:19](https://github.com/Leko/primitive-assert/blob/42398a3/src/isFiniteNumber.ts#L19)
+[isFiniteNumber.ts:19](https://github.com/Leko/primitive-assert/blob/b52b46b/src/isFiniteNumber.ts#L19)
 
 ___
 
@@ -291,7 +292,7 @@ asserts value is InstanceType<T\>
 
 #### Defined in
 
-[isInstanceOf.ts:29](https://github.com/Leko/primitive-assert/blob/42398a3/src/isInstanceOf.ts#L29)
+[isInstanceOf.ts:29](https://github.com/Leko/primitive-assert/blob/b52b46b/src/isInstanceOf.ts#L29)
 
 ___
 
@@ -326,7 +327,7 @@ asserts value
 
 #### Defined in
 
-[isNonNullish.ts:17](https://github.com/Leko/primitive-assert/blob/42398a3/src/isNonNullish.ts#L17)
+[isNonNullish.ts:17](https://github.com/Leko/primitive-assert/blob/b52b46b/src/isNonNullish.ts#L17)
 
 ___
 
@@ -360,4 +361,48 @@ asserts value is string
 
 #### Defined in
 
-[isString.ts:16](https://github.com/Leko/primitive-assert/blob/42398a3/src/isString.ts#L16)
+[isString.ts:16](https://github.com/Leko/primitive-assert/blob/b52b46b/src/isString.ts#L16)
+
+___
+
+### notEqual
+
+▸ **notEqual**<`T`, `E`\>(`actual`, `expected`, `message?`, `Err?`): asserts actual is Not<T, E\>
+
+Asserts the first argument is not exactly the same as the second argument.
+
+**`example`**
+```typescript
+import { notEqual } from 'primitive-assert'
+
+notEqual('1', 1)
+notEqual('a', 'b')
+notEqual({}, {})
+notEqual(NaN, NaN)
+notEqual('abc', 'abc') // => throws error
+notEqual(1, 1) // => throws error
+```
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends `unknown` |
+| `E` | `E` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `actual` | `T` |
+| `expected` | `E` |
+| `message?` | `string` |
+| `Err` | `ErrorConstructor` |
+
+#### Returns
+
+asserts actual is Not<T, E\>
+
+#### Defined in
+
+[notEqual.ts:20](https://github.com/Leko/primitive-assert/blob/b52b46b/src/notEqual.ts#L20)
