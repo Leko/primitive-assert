@@ -1,20 +1,13 @@
 import { isBoolean } from "./isBoolean.js";
 
 describe("isBoolean", () => {
-  test.concurrent.each([{ v: true }, { v: false }])("is boolean", ({ v }) => {
-    isBoolean(v);
+  test.concurrent.each([true, false])("is boolean", (value) => {
+    isBoolean(value);
   });
-  test.concurrent.each([
-    { v: 0 },
-    { v: 1 },
-    { v: "" },
-    { v: "a" },
-    { v: [] },
-    { v: {} },
-    { v: NaN },
-    { v: null },
-    { v: undefined },
-  ])("is not boolean", ({ v }) => {
-    expect(() => isBoolean(v)).toThrowError();
-  });
+  test.concurrent.each([0, 1, "", "a", [], {}, NaN, null, undefined])(
+    "is not boolean",
+    (value) => {
+      expect(() => isBoolean(value)).toThrowError();
+    }
+  );
 });

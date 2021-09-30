@@ -7,15 +7,15 @@ describe("equal", () => {
     [undefined, undefined],
     [true, true],
     ["a", "a"],
-  ])("is equal", (a, b) => {
-    equal(a, b);
+  ])("is equal", (actual, expected) => {
+    equal(actual, expected);
   });
   test.concurrent.each([
     [1, "1"],
     [null, ""],
     [false, ""],
     [0, ""],
-  ])("is not equal", (a, b) => {
-    expect(() => equal(a, b)).toThrowError();
+  ])("is not equal", (actual, expected) => {
+    expect(() => equal(actual, expected)).toThrowError();
   });
 });

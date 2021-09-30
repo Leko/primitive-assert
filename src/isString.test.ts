@@ -1,19 +1,13 @@
 import { isString } from "./isString.js";
 
 describe("isString", () => {
-  test.concurrent.each([{ v: "" }, { v: "a" }])("is string", ({ v }) => {
-    isString(v);
+  test.concurrent.each(["", "a"])("is string", (value) => {
+    isString(value);
   });
-  test.concurrent.each([
-    { v: 0 },
-    { v: false },
-    { v: null },
-    { v: undefined },
-    { v: NaN },
-    { v: [] },
-    { v: {} },
-    { v: Symbol("a") },
-  ])("is not string", ({ v }) => {
-    expect(() => isString(v)).toThrowError();
-  });
+  test.concurrent.each([0, false, null, undefined, NaN, [], {}, Symbol("a")])(
+    "is not string",
+    (value) => {
+      expect(() => isString(value)).toThrowError();
+    }
+  );
 });

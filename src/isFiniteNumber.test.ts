@@ -1,25 +1,16 @@
 import { isFiniteNumber } from "./isFiniteNumber.js";
 
 describe("isFiniteNumber", () => {
-  test.concurrent.each([{ v: 0 }, { v: 1 }])("is finite", ({ v }) => {
-    isFiniteNumber(v);
+  test.concurrent.each([0, 1])("is finite", (value) => {
+    isFiniteNumber(value);
   });
-  test.concurrent.each([{ v: Infinity }, { v: NaN }])(
-    "is not finute",
-    ({ v }) => {
-      expect(() => isFiniteNumber(v)).toThrowError();
+  test.concurrent.each([Infinity, NaN])("is not finute", (value) => {
+    expect(() => isFiniteNumber(value)).toThrowError();
+  });
+  test.concurrent.each([true, false, "", "a", [], {}, null, undefined])(
+    "is not number",
+    (value) => {
+      expect(() => isFiniteNumber(value)).toThrowError();
     }
   );
-  test.concurrent.each([
-    { v: true },
-    { v: false },
-    { v: "" },
-    { v: "a" },
-    { v: [] },
-    { v: {} },
-    { v: null },
-    { v: undefined },
-  ])("is not number", ({ v }) => {
-    expect(() => isFiniteNumber(v)).toThrowError();
-  });
 });
