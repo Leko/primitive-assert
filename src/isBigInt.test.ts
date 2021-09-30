@@ -10,4 +10,12 @@ describe("isBigInt", () => {
       expect(() => isBigInt(value)).toThrowError();
     }
   );
+  describe("typecheck", () => {
+    it.skip("is narrowed as BigInt", () => {
+      const x: BigInt | number = Math.random() ? 1n : 1;
+      isBigInt(x);
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const _: BigInt = x;
+    });
+  });
 });

@@ -1,4 +1,4 @@
-import { assert } from "./assert.js";
+import { format } from "./format.js";
 
 /**
  * Asserts the value is a BigInt.
@@ -18,6 +18,8 @@ export function isBigInt(
   value: unknown,
   message?: string,
   Err = TypeError
-): asserts value is number {
-  assert(typeof value === "bigint", message, Err);
+): asserts value is BigInt {
+  if (typeof value !== "bigint") {
+    throw new Err(message ?? `expected BigInt, but got ${format(value)}`);
+  }
 }

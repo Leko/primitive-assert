@@ -25,7 +25,7 @@ export function notEqual<T extends unknown, E>(
 ): asserts actual is Not<T, E> {
   if (actual === expected) {
     throw new Err(
-      message ?? `expected ${format(expected)}, but got ${format(actual)}`
+      message ?? `not expected ${format(expected)}, but got ${format(actual)}`
     );
   }
 }

@@ -1,4 +1,5 @@
 import { assert } from "./assert.js";
+import { format } from "./format.js";
 
 /**
  * Asserts the value is a finite number. `NaN` and `Infinity` will be rejected.
@@ -21,6 +22,12 @@ export function isFiniteNumber(
   message?: string,
   Err = TypeError
 ): asserts value is number {
-  assert(typeof value === "number", message, Err);
-  assert(Number.isFinite(value), message, Err);
+  if (typeof value !== "number") {
+    throw new Err(message ?? `expected number, but got ${format(value)}`);
+  }
+  if (!Number.isFinite(value)) {
+    throw new Err(
+      message ?? `expected finite number, but got ${format(value)}`
+    );
+  }
 }

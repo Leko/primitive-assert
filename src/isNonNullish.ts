@@ -1,5 +1,3 @@
-import { assert } from "./assert.js";
-
 /**
  * Asserts the value is not a `null` nor `undefined`.
  *
@@ -19,6 +17,10 @@ export function isNonNullish(
   message?: string,
   Err = TypeError
 ): asserts value {
-  assert(typeof value !== "undefined", message, Err);
-  assert(value !== null, message, Err);
+  if (typeof value === "undefined") {
+    throw new Err(message ?? `not expected undefined, but got undefined`);
+  }
+  if (value === null) {
+    throw new Err(message ?? `not expected null, but got null`);
+  }
 }

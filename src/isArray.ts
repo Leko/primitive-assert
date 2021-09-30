@@ -1,4 +1,4 @@
-import { assert } from "./assert.js";
+import { format } from "./format.js";
 
 /**
  * Asserts the value is an array, not an array-like.
@@ -18,5 +18,7 @@ export function isArray<T>(
   message?: string,
   Err = TypeError
 ): asserts value is T[] {
-  assert(Array.isArray(value), message, Err);
+  if (!Array.isArray(value)) {
+    throw new Err(message ?? `expected array, but got ${format(value)}`);
+  }
 }

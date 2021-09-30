@@ -1,4 +1,4 @@
-import { assert } from "./assert.js";
+import { format } from "./format.js";
 
 /**
  * Asserts the value is a boolean.
@@ -19,5 +19,7 @@ export function isBoolean(
   message?: string,
   Err = TypeError
 ): asserts value is string {
-  assert(typeof value === "boolean", message, Err);
+  if (typeof value !== "boolean") {
+    throw new Err(message ?? `expected boolean, but got ${format(value)}`);
+  }
 }

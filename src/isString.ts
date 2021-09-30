@@ -1,4 +1,4 @@
-import { assert } from "./assert.js";
+import { format } from "./format.js";
 
 /**
  * Asserts the value is a string.
@@ -18,5 +18,7 @@ export function isString(
   message?: string,
   Err = TypeError
 ): asserts value is string {
-  assert(typeof value === "string", message, Err);
+  if (typeof value !== "string") {
+    throw new Err(message ?? `expected string, but got ${format(value)}`);
+  }
 }
