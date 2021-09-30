@@ -1,7 +1,7 @@
 import { equal } from "./equal.js";
 
 export function assert(
-  value: any,
+  value: unknown,
   message?: string,
   Err = Error
 ): asserts value {

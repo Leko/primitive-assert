@@ -1,4 +1,4 @@
-function toTypeName(obj: any): string {
+function toTypeName(obj: unknown): string {
   const t = typeof obj;
   if (t !== "object") {
     return t;
@@ -6,6 +6,6 @@ function toTypeName(obj: any): string {
   return Object.prototype.toString.call(obj);
 }
 
-export function format(obj: any): string {
+export function format(obj: unknown): string {
   return `${obj}(${toTypeName(obj)})`;
 }

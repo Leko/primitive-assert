@@ -1,6 +1,8 @@
 import { assert } from "./assert.js";
 
-export function isInstanceOf<T extends abstract new (...args: any) => any>(
+export function isInstanceOf<
+  T extends abstract new (...args: unknown[]) => unknown
+>(
   value: unknown,
   constructor: T,
   message?: string,
