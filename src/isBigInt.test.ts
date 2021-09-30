@@ -11,8 +11,14 @@ describe("isBigInt", () => {
     }
   );
   describe("typecheck", () => {
-    it.skip("is narrowed as BigInt", () => {
-      const x: BigInt | number = Math.random() ? 1n : 1;
+    it.skip("narrowing works correctly", () => {
+      const x: unknown = Math.random() ? "a" : 1n;
+      isBigInt(x);
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const _: BigInt = x;
+    });
+    it.skip("narrowing works correctly", () => {
+      const x: BigInt | string = Math.random() ? "a" : 1n;
       isBigInt(x);
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const _: BigInt = x;

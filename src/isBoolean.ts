@@ -18,7 +18,7 @@ export function isBoolean(
   value: unknown,
   message?: string,
   Err = TypeError
-): asserts value is string {
+): asserts value is boolean {
   if (typeof value !== "boolean") {
     throw new Err(message ?? `expected boolean, but got ${format(value)}`);
   }

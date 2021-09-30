@@ -49,7 +49,7 @@ asserts value
 
 #### Defined in
 
-[assert.ts:16](https://github.com/Leko/primitive-assert/blob/b52b46b/src/assert.ts#L16)
+[assert.ts:16](https://github.com/Leko/primitive-assert/blob/ac35cc6/src/assert.ts#L16)
 
 ___
 
@@ -91,7 +91,7 @@ asserts actual is T
 
 #### Defined in
 
-[equal.ts:17](https://github.com/Leko/primitive-assert/blob/b52b46b/src/equal.ts#L17)
+[equal.ts:17](https://github.com/Leko/primitive-assert/blob/ac35cc6/src/equal.ts#L17)
 
 ___
 
@@ -131,13 +131,13 @@ asserts value is T[]
 
 #### Defined in
 
-[isArray.ts:16](https://github.com/Leko/primitive-assert/blob/b52b46b/src/isArray.ts#L16)
+[isArray.ts:16](https://github.com/Leko/primitive-assert/blob/ac35cc6/src/isArray.ts#L16)
 
 ___
 
 ### isBigInt
 
-▸ **isBigInt**(`value`, `message?`, `Err?`): asserts value is number
+▸ **isBigInt**(`value`, `message?`, `Err?`): asserts value is BigInt
 
 Asserts the value is a BigInt.
 
@@ -162,17 +162,17 @@ isBigInt('1') // => throws error
 
 #### Returns
 
-asserts value is number
+asserts value is BigInt
 
 #### Defined in
 
-[isBigInt.ts:17](https://github.com/Leko/primitive-assert/blob/b52b46b/src/isBigInt.ts#L17)
+[isBigInt.ts:17](https://github.com/Leko/primitive-assert/blob/ac35cc6/src/isBigInt.ts#L17)
 
 ___
 
 ### isBoolean
 
-▸ **isBoolean**(`value`, `message?`, `Err?`): asserts value is string
+▸ **isBoolean**(`value`, `message?`, `Err?`): asserts value is boolean
 
 Asserts the value is a boolean.
 
@@ -197,11 +197,11 @@ isBoolean('') // => throws error
 
 #### Returns
 
-asserts value is string
+asserts value is boolean
 
 #### Defined in
 
-[isBoolean.ts:17](https://github.com/Leko/primitive-assert/blob/b52b46b/src/isBoolean.ts#L17)
+[isBoolean.ts:17](https://github.com/Leko/primitive-assert/blob/ac35cc6/src/isBoolean.ts#L17)
 
 ___
 
@@ -238,7 +238,7 @@ asserts value is number
 
 #### Defined in
 
-[isFiniteNumber.ts:19](https://github.com/Leko/primitive-assert/blob/b52b46b/src/isFiniteNumber.ts#L19)
+[isFiniteNumber.ts:20](https://github.com/Leko/primitive-assert/blob/ac35cc6/src/isFiniteNumber.ts#L20)
 
 ___
 
@@ -292,7 +292,7 @@ asserts value is InstanceType<T\>
 
 #### Defined in
 
-[isInstanceOf.ts:29](https://github.com/Leko/primitive-assert/blob/b52b46b/src/isInstanceOf.ts#L29)
+[isInstanceOf.ts:29](https://github.com/Leko/primitive-assert/blob/ac35cc6/src/isInstanceOf.ts#L29)
 
 ___
 
@@ -327,7 +327,7 @@ asserts value
 
 #### Defined in
 
-[isNonNullish.ts:17](https://github.com/Leko/primitive-assert/blob/b52b46b/src/isNonNullish.ts#L17)
+[isNonNullish.ts:15](https://github.com/Leko/primitive-assert/blob/ac35cc6/src/isNonNullish.ts#L15)
 
 ___
 
@@ -361,7 +361,7 @@ asserts value is string
 
 #### Defined in
 
-[isString.ts:16](https://github.com/Leko/primitive-assert/blob/b52b46b/src/isString.ts#L16)
+[isString.ts:16](https://github.com/Leko/primitive-assert/blob/ac35cc6/src/isString.ts#L16)
 
 ___
 
@@ -405,4 +405,4 @@ asserts actual is Not<T, E\>
 
 #### Defined in
 
-[notEqual.ts:20](https://github.com/Leko/primitive-assert/blob/b52b46b/src/notEqual.ts#L20)
+[notEqual.ts:20](https://github.com/Leko/primitive-assert/blob/ac35cc6/src/notEqual.ts#L20)

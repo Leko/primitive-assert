@@ -18,4 +18,25 @@ describe("equal", () => {
   ])("is not equal", (actual, expected) => {
     expect(() => equal(actual, expected)).toThrowError();
   });
+
+  describe("typecheck", () => {
+    it.skip("narrowing works correctly", () => {
+      const x: unknown = Math.random() ? "a" : 1;
+      equal(x, 1);
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const _: number = x;
+    });
+    it.skip("narrowing works correctly", () => {
+      const x: number | string = Math.random() ? "a" : 1;
+      equal(x, 1);
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const _: number = x;
+    });
+    it.skip("narrowing works correctly", () => {
+      const x: "a" | "b" = Math.random() ? "a" : "b";
+      equal(x, "a" as const);
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const _: "a" = x;
+    });
+  });
 });
