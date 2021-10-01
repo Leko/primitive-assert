@@ -1,7 +1,9 @@
 # primitive-assert
 
-![npm bundle size](https://img.shields.io/bundlephobia/minzip/primitive-assert)
+![npm](https://img.shields.io/npm/v/primitive-assert)
 ![NPM](https://img.shields.io/npm/l/primitive-assert)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/primitive-assert)
+![Codecov](https://img.shields.io/codecov/c/github/Leko/primitive-assert)
 ![GitHub branch checks state](https://img.shields.io/github/checks-status/Leko/primitive-assert/main)
 
 An assertion library to be used at runtime.
