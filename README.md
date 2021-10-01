@@ -35,7 +35,7 @@ npm install --save primitive-assert
 Let's get started by writing an assertion.
 
 ```ts
-import * as assert from "./dist/index.js";
+import * as assert from "primitive-assert";
 
 const y = JSON.parse('{"data":null}');
 assert.isArray(y.data); // => throws an error
